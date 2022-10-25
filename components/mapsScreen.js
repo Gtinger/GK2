@@ -7,9 +7,9 @@ import {Accuracy} from "expo-location";
 import {useState, useEffect} from "react";
 import * as data from "./data.json"
 
-const adress = data.location[0].Name
+const adress = data.location
 
-console.log(adress)
+console.log(adress[0].Name)
 
 function MapsScreen() {
 
@@ -125,10 +125,13 @@ function MapsScreen() {
               style={styles.map}
               showsUserLocation
               onLongPress={handleLongPress}>
+ 
+
+
             <Marker
-                coordinate={{ latitude: 55.728132130345905, longitude: 12.576137280015397 }} 
-                title={adress}
-                description="blablabal"
+                coordinate={{ latitude: adress[0].latitude, longitude: adress[0].longitude }} 
+                title={adress[0].Name}
+                description={adress[0].description}
             />
             <Marker
                 coordinate={{ latitude: 55.673035, longitude: 12.568756 }}
