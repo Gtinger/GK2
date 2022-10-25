@@ -1,20 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from "./components/todoScreen";
+import SettingsScreen from "./components/doneScreen";
+import MapsScreen from './components/mapsScreen';
 
-export default function App() {
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+const Tab = createBottomTabNavigator();
+
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer>
+        <Tab.Navigator screenOptions={({ route }) => ({
+          tabBarActiveTintColor: "black",
+          tabBarInactiveTintColor: "gray",
+          tabBarStyle: [
+        {
+          display: "flex"
+        },
+          null
+          ],
+          tabBarIcon: ({ color, size }) => {
+            if (route.name === 'Todo') {
+              return (
+                  <Ionicons
+                      name={'alert-outline'}
+                      size={size}
+                      color={color}
+                  />
+              );
+            } else if (route.name === 'Maps') {
+              return (
+                  <Ionicons
+                      name='globe-outline'
+                      size={size}
+                      color={color}
+                  />
+              );
+            }
+            else{
+              return (
+                  <Ionicons
+                      name='md-list-outline'
+                      size={size}
+                      color={color}
+                  />
+              );
+            }
+          },
+        })}
+        >
+  
+          <Tab.Screen name="Maps" children={()=><MapsScreen />} />
+          <Tab.Screen name="Todo" children={()=><HomeScreen/>} />
+        </Tab.Navigator>
+      </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App

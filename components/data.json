@@ -1,0 +1,10 @@
+{
+    "done": ["Go for a run","Meet with Andy", "Buy gnochhii"],
+    "todo":["Eat dinner","Read a chapter in Harry Potter", "Brush Teeth"],
+    "location": [
+            {"Name": "Meny", "longitude":55.7277002955183,"latitude":12.576462066251489 },
+            {"Name": "Kurhotel Skodsborg","longitude":55.81970636493541,"latitude":12.574480479412703},
+            {"Name": "Rundetaarn", "longitude":55.68142171429502,"latitude":12.575702348607928}
+          ]
+    
+}
