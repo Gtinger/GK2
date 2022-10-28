@@ -2,9 +2,9 @@
     "done": ["Go for a run","Meet with Andy", "Buy gnochhii"],
     "todo":["Eat dinner","Read a chapter in Harry Potter", "Brush Teeth"],
     "location": [
-            {"Name": "Meny","description":"butik:)", "latitude":55.7277002955183,"longitude":12.576462066251489 },
-            {"Name": "Kurhotel Skodsborg","description":"butik:)","latitude":55.81970636493541,"longitude":12.574480479412703},
-            {"Name": "Rundetaarn","description":"butik:)", "latitude":55.68142171429502,"longitude":12.575702348607928}
+            {"Name": "Meny","description":"butik", "latitude":55.7277002955183,"longitude":12.576462066251489 },
+            {"Name": "Kurhotel Skodsborg","description":"Spa","latitude":55.81970636493541,"longitude":12.574480479412703},
+            {"Name": "Rundetaarn","description":"Sevaerdighed", "latitude":55.68142171429502,"longitude":12.575702348607928}
           ]
     
 }
