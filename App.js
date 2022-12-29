@@ -5,6 +5,7 @@ import HomeScreen from "./components/todoScreen";
 import MapsScreen from './components/mapsScreen';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import LoginScreen from './components/LoginScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -54,6 +55,7 @@ function App() {
   
           <Tab.Screen name="Maps" children={()=><MapsScreen />} />
           <Tab.Screen name="Todo" children={()=><HomeScreen/>} />
+          <Tab.Screen name="Login" children={()=><LoginScreen/>} />
         </Tab.Navigator>
       </NavigationContainer>
   );
