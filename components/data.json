@@ -1,11 +1,11 @@
 {
     "location": [
-            {"Name": "Meny kundetoilet","description":"butik", "latitude":55.7277002955183,"longitude":12.576462066251489,"handicapFriendly":true,"rating":8.8},
-            {"Name": "Det Røde Toilet","description":"Spa","latitude":55.70072764514335,"longitude":12.56550112731096,"handicapFriendly":false,"rating":5.3},
-            {"Name": "Toilet Parken","description":"Sevaerdighed", "latitude":55.70502846283353,"longitude":12.564980300164828,"handicapFriendly":true,"rating":2.2},
-            {"Name": "Toilet Melchiors Plads","description":"Sevaerdighed", "latitude":55.703842666567766,"longitude":12.585657959970055,"handicapFriendly":true,"rating":4.2},
-            {"Name": "Offentligt toilet - Nannasgade","description":"Sevaerdighed", "latitude":55.70008358396698,"longitude":12.548967569855815,"handicapFriendly":true,"rating":2.2},
-            {"Name": "Metro toilet","description":"Sevaerdighed", "latitude":55.676567302420146,"longitude":12.569114277828929,"handicapFriendly":false,"rating":3.2},
-            {"Name": "Tivoli Toilet","description":"Sevaerdighed", "latitude":55.67489029250566,"longitude":12.56624518863978,"handicapFriendly":true,"rating":7.2}
+            {"Name": "Meny kundetoilet","description":"butik", "latitude":55.7277002955183,"longitude":12.576462066251489,"handicapFriendly":true,"rating":8.8,"id":1},
+            {"Name": "Det Røde Toilet","description":"Spa","latitude":55.70072764514335,"longitude":12.56550112731096,"handicapFriendly":false,"rating":5.3,"id":2},
+            {"Name": "Toilet Parken","description":"Sevaerdighed", "latitude":55.70502846283353,"longitude":12.564980300164828,"handicapFriendly":true,"rating":2.2,"id":3},
+            {"Name": "Toilet Melchiors Plads","description":"Sevaerdighed", "latitude":55.703842666567766,"longitude":12.585657959970055,"handicapFriendly":true,"rating":4.2,"id":4},
+            {"Name": "Offentligt toilet - Nannasgade","description":"Sevaerdighed", "latitude":55.70008358396698,"longitude":12.548967569855815,"handicapFriendly":false,"rating":2.2,"id":5},
+            {"Name": "Metro toilet","description":"Sevaerdighed", "latitude":55.676567302420146,"longitude":12.569114277828929,"handicapFriendly":false,"rating":3.2,"id":6},
+            {"Name": "Tivoli Toilet","description":"Sevaerdighed", "latitude":55.67489029250566,"longitude":12.56624518863978,"handicapFriendly":false,"rating":7.2,"id":7}
           ]
 }
