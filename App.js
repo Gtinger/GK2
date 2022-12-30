@@ -24,10 +24,10 @@ function App() {
           null
           ],
           tabBarIcon: ({ color, size }) => {
-            if (route.name === 'Todo') {
+            if (route.name === 'Login') {
               return (
                   <Ionicons
-                      name={'alert-outline'}
+                      name={'key-outline'}
                       size={size}
                       color={color}
                   />
@@ -36,6 +36,14 @@ function App() {
               return (
                   <Ionicons
                       name='globe-outline'
+                      size={size}
+                      color={color}
+                  />
+              );
+            } else if (route.name === 'Home') {
+              return (
+                  <Ionicons
+                      name='home-outline'
                       size={size}
                       color={color}
                   />
