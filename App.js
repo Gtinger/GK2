@@ -63,7 +63,6 @@ function App() {
         >
           <Tab.Screen name="Login" children={()=><LoginScreen/>} />
           <Tab.Screen name="Maps" children={()=><MapsScreen />} />
-        { /* <Tab.Screen name="Todo" children={()=><HomeScreen/>} />*/}
           
           <Tab.Screen name="Home" children={()=><HomeScreen/>} />
         </Tab.Navigator>

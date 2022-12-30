@@ -1,10 +1,11 @@
-import { KeyboardAvoidingView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ImageBackground, KeyboardAvoidingView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { TextInput } from 'react-native-gesture-handler'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 
 const LoginScreen = () => {
+    const localImage = require("../Images/toi-letz.jpg")
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -13,7 +14,7 @@ const LoginScreen = () => {
 
     useEffect(() => { //unsubscribe gør at funktionen ikke pinger når det ikke er nødvendigt
        const unsubscribe = auth.onAuthStateChanged(user => {
-            if (user) {navigation.navigate("Home")}
+            if (true) {navigation.navigate("Home")}
         })
 
         return unsubscribe
@@ -36,12 +37,17 @@ const LoginScreen = () => {
             const user = userCredentials.user;
             console.log('logged in with: ', user.email)
         })
+        navigation.navigate("Home")
 
     }
+
+
+   
 
   return (
     <KeyboardAvoidingView style={styles.container}
     behavior="padding">
+       <ImageBackground source={localImage} style={styles.localImage}>
         <View style={styles.inputContainer}>
             <TextInput
             placeholder='Email'
@@ -55,9 +61,9 @@ const LoginScreen = () => {
             style={styles.input}
             secureTextEntry
             />
-
+ 
         </View>
-
+        
 
         <View style={styles.buttonContainer}>
              <TouchableOpacity
@@ -73,6 +79,7 @@ const LoginScreen = () => {
             <Text style={styles.buttonOutlineText}>Register</Text>
           </TouchableOpacity>
         </View>
+        </ImageBackground>
     </KeyboardAvoidingView>
   )
 }
@@ -124,4 +131,10 @@ const styles = StyleSheet.create({
       fontWeight: '700',
       fontSize: 16,
     },
+    localImage: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width:'100%',
+      },
   })

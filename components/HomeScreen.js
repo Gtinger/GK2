@@ -3,13 +3,15 @@ import React from 'react'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
-
+import * as data1 from './data.json'
 
 const HomeScreen = () => {
-
-    const localImage = require("../Images/toi-letz.jpg")
-
+    const data = data1.location
     const navigation = useNavigation()
+
+    const handleNavigate = () => {
+        navigation.navigate("Maps")
+    }
 
     const handleSignOut = () => {
         auth
@@ -19,19 +21,29 @@ const HomeScreen = () => {
           })
           .catch(error => alert(error.message))
       }
-  return (
-    
-    <ImageBackground source={localImage} style={styles.container}>
-        <ImageBackground source={localImage}></ImageBackground>
-      <Text>Email: {auth.currentUser?.email}</Text>
+      return (
+        <View>
+            <Text style={styles.title}>Accessible</Text>
+          {data.map((item) => {
+            if (item.handicapFriendly) {
+                return <TouchableOpacity onPress={handleNavigate}><Text style={styles.item} key={item.id}>{item.Name} {item.rating}</Text></TouchableOpacity>
+                }    
+            })}
+                        <Text style={styles.title}>Less Accessible</Text>
+          {data.map((item) => {
+            if (!item.handicapFriendly) {
+                return <Text style={styles.item} key={item.id}>{item.Name} {item.rating}</Text>
+                }    
+            })}
       <TouchableOpacity 
       onPress={handleSignOut}
       style={styles.button}>
         <Text style={styles.buttonText}>Sign out</Text>
       </TouchableOpacity>
-      </ImageBackground>
-  )
-}
+
+        </View>
+      );
+    };
 
 export default HomeScreen
 
@@ -40,6 +52,16 @@ const styles = StyleSheet.create({
     container: {
         flex:1,
         justifyContent: 'space-between',
+        
+    },
+    title: {
+        fontSize: 18,
+        color: 'white',
+        backgroundColor: 'black',
+        borderColor: 'lightgray',
+        borderWidth: 1,
+        padding: 10,
+        margin: 10,
         
     },
     button: {
@@ -60,5 +82,14 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: '700',
         fontSize: 16},
+        item: {
+            fontSize: 18,
+            color: 'blue',
+            backgroundColor: 'white',
+            borderColor: 'lightgray',
+            borderWidth: 1,
+            padding: 10,
+            margin: 10,
+          },
 
 })

@@ -81,8 +81,15 @@ function MapsScreen() {
               provider="google"
               style={styles.map}
               showsUserLocation
-              onLongPress={handleLongPress}>
- 
+              onLongPress={handleLongPress}
+              initialRegion={{
+                latitude: 55.67782086544916,
+                longitude: 12.524891962110994,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0821,
+              }}
+              >
+
 
   {markers.map((marker, index) => (
         <Marker
@@ -91,8 +98,10 @@ function MapsScreen() {
             latitude: marker.latitude,
             longitude: marker.longitude,
           }}
+          
           title={marker.Name}
           description={JSON.stringify(marker.rating)}
+             
 
         />
       ))}
@@ -144,6 +153,6 @@ const styles = StyleSheet.create({
   },
   infoText: {
     fontSize: 15,
-  },
+  }
 });
 export default MapsScreen
