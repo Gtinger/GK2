@@ -67,7 +67,7 @@ function MapsScreen() {
     }
     return (
         <View>
-          <Button style title="update location" onPress={updateLocation} />
+          
 
         </View>
     );
