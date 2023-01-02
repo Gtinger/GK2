@@ -12,7 +12,6 @@ const markers = data.location
 
 function MapsScreen() {
 
-  
   const [hasLocationPermission, setlocationPermission] = useState(false)
   const [currentLocation, setCurrentLocation] = useState(null)
   const [userMarkerCoordinates, setUserMarkerCoordinates] = useState([])
@@ -130,7 +129,6 @@ function MapsScreen() {
 }
 
 
-//Styling i app js
 const styles = StyleSheet.create({
   container: {
     flex: 1,
