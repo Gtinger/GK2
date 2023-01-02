@@ -1,13 +1,32 @@
 import { ImageBackground, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react';
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 import * as data1 from './data.json'
 
+
+
+
+
+
 const HomeScreen = () => {
     const data = data1.location
     const navigation = useNavigation()
+
+  
+    const [likePressed, setLikePressed] = useState(false);
+    const [dislikePressed, setDislikePressed] = useState(false);
+  
+    const handleLikePress = () => {
+      setLikePressed(!likePressed);
+      setDislikePressed(false);
+    };
+  
+    const handleDislikePress = () => {
+      setDislikePressed(!dislikePressed);
+      setLikePressed(false);
+    };
 
     const handleNavigate = () => {
         navigation.navigate("Maps")
@@ -22,11 +41,34 @@ const HomeScreen = () => {
           .catch(error => alert(error.message))
       }
       return (
-        <View>
+        <View >
             <Text style={styles.title}>Accessible</Text>
           {data.map((item) => {
             if (item.handicapFriendly) {
-                return <TouchableOpacity onPress={handleNavigate}><Text style={styles.item} key={item.id}>{item.Name} {item.rating}</Text></TouchableOpacity>
+                return (
+                <><TouchableOpacity onPress={handleNavigate}>
+                    <Text style={styles.item} key={item.id}>{item.Name} {item.rating}
+                    </Text>
+
+                  </TouchableOpacity>
+                  <View style={styles.container} >
+        <TouchableOpacity
+                  
+          style={[styles.likeButton, likePressed ? styles.likeButtonPressed : null]}
+          onPress={handleLikePress}
+        >
+          <Text style={styles.likeButtonText} key={item.Name}>Like</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.likeButton, dislikePressed ? styles.likeButtonPressed : null]}
+          onPress={handleDislikePress}
+        >
+          <Text style={styles.likeButtonText}>Dislike</Text>
+        </TouchableOpacity>
+        </View>
+        </>
+        
+                )
                 }    
             })}
                         <Text style={styles.title}>Less Accessible</Text>
@@ -50,8 +92,10 @@ export default HomeScreen
 const styles = StyleSheet.create({
 
     container: {
-        flex:1,
-        justifyContent: 'space-between',
+        flexDirection:'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        
         
     },
     title: {
@@ -89,7 +133,21 @@ const styles = StyleSheet.create({
             borderColor: 'lightgray',
             borderWidth: 1,
             padding: 10,
-            margin: 10,
+            margin: 5,
+          },
+          likeButton: {
+            backgroundColor: '#0782F9',
+            
+            padding: 3,
+            borderRadius: 15,
+            alignItems: 'center',
+            marginHorizontal: 5,            
+          },
+          likeButtonPressed: {
+         
+          },
+          likeButtonText: {
+            color: '#fff',
           },
 
 })
