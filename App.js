@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//import HomeScreen from "./components/todoScreen"; denne drillede sidst
+
 import MapsScreen from './components/mapsScreen';
 import HomeScreen from './components/HomeScreen';
 
