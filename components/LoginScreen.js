@@ -5,7 +5,7 @@ import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 
 const LoginScreen = () => {
-    const localImage = require("../Images/toi-letz.jpg")
+    const localImage = require("../Images/toi-letz.jpg") //baggrundsbillede
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
